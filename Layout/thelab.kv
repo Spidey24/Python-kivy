@@ -1,0 +1,94 @@
+PageLayoutExample:
+
+<PageLayoutExample@PageLayout>:
+    MainWidget:
+    BoxLayoutExample:
+    AnchorLayoutExample:
+    GridLayoutExample:
+
+<ScrollViewExample@ScrollView>:
+    StackLayoutExample:
+        size_hint : 1, None
+        height : self.minimum_height
+
+<StackLayoutExample>:
+    #left-right,top-bottom
+    #orientation:'rl-tb'
+    spacing : '20dp' , '20dp'
+    #padding : '10dp', '10dp' , '10dp' , '10dp'
+
+<GridLayoutExample@GridLayout>:
+#rows
+#cols
+    #cols:2
+    rows:2
+    Button:
+        text: 'A'
+    Button:
+        text: 'B'
+    BoxLayoutExample
+    Button:
+        text:'C'
+
+
+<AnchorLayoutExample>:
+    #right,left,center
+    anchor_x : 'right'
+    #bottom,top,center
+    anchor_y : 'top'
+    BoxLayout:
+        size_hint : .2,.2
+        Button:
+            
+            text: 'A'
+        Button:
+            text:'B'
+
+
+<BoxLayoutExample>:
+    orientation:'horizontal'
+    Button:
+        text: 'A'
+        size_hint : .5,.5
+        
+        #If size_hint is none then only size works
+        #size : '100dp' , '50dp'
+        
+        # Can also use width and height to keep fixed while working with size_hint
+        #width : '100dp'
+        #height : '50dp'
+        
+        # x, center_x , right
+        # y, center_y , top
+        pos_hint : { "center_y": .5}
+
+    BoxLayout:
+        orientation: "vertical"
+        spacing : '10dp'
+        Button:
+            text: 'B1'
+        Button:
+            text: 'B2'
+        Button:
+            text: 'B3'    
+        Button:
+            text: 'B4'
+    Label:
+        text : 'C'
+
+
+    
+
+
+<MainWidget>:
+    Button:
+        text: "Hello"
+        size:"40dp", "40dp"
+        pos:'100dp','200dp'
+        color: 0,0,1,1
+
+    Label:
+        text : 'World'
+        size: '50dp' , '20dp'
+        pos: '150dp', '250dp'
+        color: 1, 0, 1, 1
